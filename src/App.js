@@ -1,15 +1,15 @@
 import React from 'react';
 import Test from './Test';
 
-function Subtitle() {
+function Subtitle(property) {
   return (
-    <h2>written by Choieastsea.</h2>
+    <h2>written by {property.name}.</h2>
   );
 }
-class Subject extends React.Component{
+class Subject extends React.Component {
   render() {
     return (
-      <h3>Subject: IT</h3>
+      <h3>Subject: {this.props.subname} </h3>
     );
   }
 }
@@ -17,8 +17,9 @@ function App() {
   return (
     <div>
       <Test />
-      <Subject />
-      <Subtitle />
+      <Subject subname="IT" />
+      <Subject subname="Math" />
+      <Subtitle name="choieastsea" />
       Hello React!
     </div>
   );
